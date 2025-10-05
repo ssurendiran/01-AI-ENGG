@@ -1,8 +1,13 @@
 import streamlit as st
 import requests
 
-from core.config import config
 
+from core.config import config
+import inspect, os
+
+print("✅ Loaded config from:", inspect.getfile(config.__class__))
+print("✅ Config instance attributes:", dir(config))
+print("✅ Model dump:", getattr(config, "model_dump", lambda: {})())
 ## Lets create a sidebar with a dropdown for the model list and providers
 with st.sidebar:
     st.title("Settings")

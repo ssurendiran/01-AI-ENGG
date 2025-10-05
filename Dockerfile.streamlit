@@ -17,6 +17,7 @@ COPY pyproject.toml uv.lock ./
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen
 
+ARG CACHEBUST=1
 # Copy application code
 COPY src/chatbot_ui ./src/chatbot_ui/
 

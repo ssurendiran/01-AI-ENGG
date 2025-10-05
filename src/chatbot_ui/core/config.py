@@ -1,12 +1,17 @@
+# src/chatbot_ui/core/config.py
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Config(BaseSettings):
-    OPENAI_API_KEY: str
-    GROQ_API_KEY: str
-    GOOGLE_API_KEY: str 
+    OPENAI_API_KEY: str | None = None
+    GROQ_API_KEY: str | None = None
+    GOOGLE_API_KEY: str | None = None
 
-    model_config = SettingsConfigDict(env_file=".env")
+    # ✅ Important: define as field, not class var
+    API_URL: str = "http://api:8000"
 
-config = Config() 
+    model_config = SettingsConfigDict(env_file=".env", extra="allow")
 
+
+# ✅ Create instance
+config = Config()
