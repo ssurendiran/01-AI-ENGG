@@ -1,4 +1,4 @@
-# 00-ai-engineering-bootcamp-cohort-2
+# 00-ai-engineering-End to End Devlopment
 
 If you do need to run the code, this is how:
 
